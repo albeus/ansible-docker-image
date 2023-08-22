@@ -1,7 +1,7 @@
 .PHONY: all build tag-latest tag-version  publish-latest
 
-APP_NAME=ansible
-DOCKER_REPO=dockerhub.ebi.ac.uk/sd-public/docker-images/ansible-image
+APP_NAME=ansible-image
+DOCKER_REPO=dockerhub.ebi.ac.uk/sd-public/docker-images
 
 build:
 	docker build -t ${APP_NAME} .
