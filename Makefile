@@ -1,4 +1,4 @@
-.PHONY: all build tag-latest tag-version  publish-latest
+.PHONY: all build tag-latest tag-version  publish-latest publish-tag
 
 APP_NAME=ansible-image
 DOCKER_REPO=dockerhub.ebi.ac.uk/sd-public/docker-images
@@ -17,3 +17,7 @@ tag-version: ## Generate container `latest` tag
 publish-latest: tag-latest ## Publish the `latest` taged container to ECR
 	@echo 'publish latest to ${DOCKER_REPO}'
 	docker push ${DOCKER_REPO}/$(APP_NAME):latest
+
+publish-tag: tag-version ## Publish the `latest` taged container to ECR
+	@echo 'publish latest to ${DOCKER_REPO}'
+	docker push ${DOCKER_REPO}/$(APP_NAME):${VERSION}

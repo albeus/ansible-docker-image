@@ -4,6 +4,7 @@ RUN apt update && \
     apt install -y openssh-client && \
     apt install -y git && \
     apt install -y pipenv && \
+    apt install -y rsync && \
     apt clean && \
     rm -rf /var/lib/apt/lists/* && \
     useradd -m -s /bin/bash ansible && \
